@@ -3,7 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>রমজানের সময়সূচী - Ramadan Calendar Bangladesh</title>
+    <meta name="description" content="রমজানের সময়সূচী - Complete Ramadan Calendar app with Sehri Iftar times, Al Quran, Digital Tasbih, Qibla Compass, Duas, Prayer times, Zakat Calculator and more Islamic features.">
+    <meta name="keywords" content="Ramadan, রমজান, Sehri, Iftar, সেহরি, ইফতার, Quran, কুরআন, Tasbih, তাসবিহ, Qibla, কিবলা, Prayer times, নামাজের সময়, Islamic app, ইসলামিক অ্যাপ, Ramadan Calendar, রমজানের সময়সূচী">
+    <meta name="author" content="Samiul Basir - Samiul's Apps">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Bengali">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="রমজানের সময়সূচী - Ramadan Calendar">
+    <meta property="og:description" content="Complete Islamic app with Ramadan timetable, Al Quran, Digital Tasbih, Qibla Compass, Duas, and more features.">
+    <meta property="og:image" content="./assets/images/logo.png">
+    <meta property="og:url" content="https://yourusername.github.io/ramadan-app/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="রমজানের সময়সূচী - Ramadan Calendar">
+    <meta name="twitter:description" content="Complete Islamic app with Ramadan timetable, Al Quran, Digital Tasbih, Qibla Compass, and more.">
+    <meta name="twitter:image" content="./assets/images/logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourusername.github.io/ramadan-app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="./assets/images/logo.png">
+    
+    <title>রমজানের সময়সূচী - Ramadan Calendar | Complete Islamic App</title>
     <style>
         @font-face {
             font-family: 'HindSiliguri';
@@ -44,6 +70,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'HindSiliguri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -81,6 +111,13 @@
 
         .logo:hover {
             transform: scale(1.05);
+            animation: wiggle 0.5s ease;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: scale(1.05) rotate(0deg); }
+            25% { transform: scale(1.05) rotate(-2deg); }
+            75% { transform: scale(1.05) rotate(2deg); }
         }
 
         .logo img {
@@ -165,17 +202,22 @@
 
         .download-btn {
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: white;
-            padding: 0.7rem 1.8rem;
+            color: white !important;
+            padding: 0.7rem 1.8rem !important;
             border-radius: 25px;
             font-weight: bold;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            display: inline-block;
         }
 
         .download-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-btn::after {
+            display: none !important;
         }
 
         .hero {
@@ -262,7 +304,7 @@
         .section-title {
             text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             color: var(--gradient-start);
             animation: fadeIn 0.6s ease-out;
         }
@@ -271,7 +313,7 @@
             text-align: center;
             font-size: 1.2rem;
             color: var(--text-secondary);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .features-grid {
@@ -288,11 +330,18 @@
             box-shadow: 0 5px 15px var(--shadow-light);
             transition: all 0.3s ease;
             animation: fadeInUp 0.6s ease-out;
+            text-align: center;
         }
 
         .feature-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 15px 35px var(--shadow-medium);
+            animation: pulse 0.6s ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateY(-10px) scale(1.02); }
+            50% { transform: translateY(-12px) scale(1.03); }
         }
 
         .feature-icon {
@@ -319,13 +368,28 @@
 
         .screenshots {
             background: var(--bg-primary);
-            padding: 4rem 2rem;
+            padding: 4rem 2rem 3rem;
             margin: 4rem 0;
         }
 
         .screenshots-container {
             max-width: 1400px;
             margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--gradient-start);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
         }
 
         .screenshots-scroll {
@@ -364,6 +428,12 @@
         .screenshot-item:hover {
             transform: translateY(-15px) scale(1.05);
             box-shadow: 0 20px 50px var(--shadow-medium);
+            animation: bounce 0.6s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-15px) scale(1.05); }
+            50% { transform: translateY(-20px) scale(1.06); }
         }
 
         .screenshot-item img {
@@ -421,6 +491,13 @@
             transform: translateX(10px);
             border-left-width: 6px;
             box-shadow: 0 5px 20px var(--shadow-light);
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(15px); }
+            100% { transform: translateX(10px); }
         }
 
         .why-item h3 {
@@ -515,10 +592,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="./" class="logo">
-                <img src="./assets/images/logo.png" alt="রমজানের সময়সূচী" onerror="this.style.display='none'">
+                <img src="./assets/images/logo.png" alt="রমজানের সময়সূচী Logo" onerror="this.style.display='none'">
                 <div class="logo-text">
                     <div class="logo-title">রমজানের সময়সূচী</div>
-                    <div class="logo-subtitle">Ramadan Calendar BD</div>
+                    <div class="logo-subtitle">Ramadan Calendar</div>
                 </div>
             </a>
             <div class="nav-links">
@@ -538,8 +615,8 @@
             <h1>🌙 রমজানের সময়সূচী</h1>
             <p>সকল জেলার সেহরি-ইফতার সময়সূচী, কুরআন, দোয়া, তাসবিহ, কিবলা, যাকাত আরও অনেক কিছু।</p>
             <div class="hero-buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.sbappstore.romjanbanglacalendar" class="btn-primary">
-                    <img src="./assets/images/google-play-badge.png" alt="Get it on Google Play">
+                <a href="https://play.google.com/store/apps/details?id=com.sbappstore.romjanbanglacalendar" class="btn-primary" aria-label="Download রমজানের সময়সূচী from Google Play">
+                    <img src="./assets/images/google-play-badge.png" alt="Download on Google Play">
                 </a>
             </div>
         </div>
@@ -603,14 +680,14 @@
 
     <footer>
         <div class="footer-links">
-            <a href="./">Home</a>
-            <a href="./privacy.html">Privacy Policy</a>
-            <a href="./faq.html">FAQ</a>
-            <a href="./contact.html">Contact</a>
-            <a href="https://play.google.com/store/apps/details?id=com.sbappstore.romjanbanglacalendar">Download</a>
+            <a href="./" aria-label="Home Page">Home</a>
+            <a href="./privacy.html" aria-label="Privacy Policy">Privacy Policy</a>
+            <a href="./faq.html" aria-label="Frequently Asked Questions">FAQ</a>
+            <a href="./contact.html" aria-label="Contact Us">Contact</a>
+            <a href="https://play.google.com/store/apps/details?id=com.sbappstore.romjanbanglacalendar" aria-label="Download App">Download</a>
         </div>
-        <p class="footer-text">© 2024 রমজানের সময়সূচী. All rights reserved.</p>
-        <p class="footer-text">Made with ❤️ for Bangladeshi Muslims</p>
+        <p class="footer-text">© 2024 রমজানের সময়সূচী - Ramadan Calendar. All rights reserved.</p>
+        <p class="footer-text">Developed by <a href="https://play.google.com/store/search?q=pub:Samiul%27s+Apps&c=apps" target="_blank" style="color: var(--gradient-start); text-decoration: none;">Samiul's Apps</a></p>
     </footer>
 
     <script>

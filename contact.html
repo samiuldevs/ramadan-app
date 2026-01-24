@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - রমজানের সময়সূচী</title>
+    <meta name="description" content="Contact us for support, feedback, or inquiries about রমজানের সময়সূচী - Ramadan Calendar app.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourusername.github.io/ramadan-app/contact.html">
+    <title>Contact Us - রমজানের সময়সূচী | Ramadan Calendar</title>
     <style>
         @font-face {
             font-family: 'HindSiliguri';
@@ -44,6 +47,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -132,13 +139,14 @@
 
         .download-btn {
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: white;
-            padding: 0.7rem 1.8rem;
+            color: white !important;
+            padding: 0.7rem 1.8rem !important;
             border-radius: 25px;
             font-weight: bold;
             text-decoration: none;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            display: inline-block;
         }
 
         .download-btn:hover {
@@ -213,6 +221,12 @@
             transform: translateY(-5px);
             border-color: var(--gradient-start);
             box-shadow: 0 10px 25px var(--shadow-light);
+            animation: cardFloat 0.6s ease;
+        }
+
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(-5px); }
+            50% { transform: translateY(-8px); }
         }
 
         .contact-icon {
@@ -374,10 +388,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="./" class="logo">
-                <img src="./assets/images/logo.png" alt="রমজানের সময়সূচী" onerror="this.style.display='none'">
+                <img src="./assets/images/logo.png" alt="রমজানের সময়সূচী Logo" onerror="this.style.display='none'">
                 <div class="logo-text">
                     <div class="logo-title">রমজানের সময়সূচী</div>
-                    <div class="logo-subtitle">Ramadan Calendar BD</div>
+                    <div class="logo-subtitle">Ramadan Calendar</div>
                 </div>
             </a>
             <div class="nav-right">
@@ -469,8 +483,8 @@
             <a href="./contact.html">Contact</a>
             <a href="https://play.google.com/store/apps/details?id=com.sbappstore.romjanbanglacalendar">Download</a>
         </div>
-        <p class="footer-text">© 2024 রমজানের সময়সূচী. All rights reserved.</p>
-        <p class="footer-text">Made with ❤️ for Bangladeshi Muslims</p>
+        <p class="footer-text">© 2024 রমজানের সময়সূচী - Ramadan Calendar. All rights reserved.</p>
+        <p class="footer-text">Developed by <a href="https://play.google.com/store/search?q=pub:Samiul%27s+Apps&c=apps" target="_blank" style="color: var(--gradient-start); text-decoration: none;">Samiul's Apps</a></p>
     </footer>
 
     <script>
