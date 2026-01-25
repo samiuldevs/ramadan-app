@@ -225,7 +225,6 @@
             padding: 5rem 2rem;
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             color: white;
-            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -246,28 +245,92 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            animation: fadeInDown 0.8s ease-out;
+            animation: fadeInLeft 0.8s ease-out;
         }
 
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2.5rem;
             opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
+            animation: fadeInLeft 0.8s ease-out 0.2s both;
+            line-height: 1.8;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1.5rem;
-            justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
+            animation: fadeInLeft 0.8s ease-out 0.4s both;
+            justify-content: center;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .btn-primary {
@@ -579,7 +642,33 @@
             .logo-title { font-size: 1.1rem; }
             .logo-subtitle { font-size: 0.65rem; }
             .logo img { width: 38px; height: 38px; }
-            .hero { margin-top: 75px; padding: 3rem 1.5rem; }
+            
+            .hero { 
+                margin-top: 75px; 
+                padding: 3rem 1.5rem; 
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                order: -1;
+            }
+            
+            .hero-image img {
+                max-width: 100%;
+            }
+            
             .hero h1 { font-size: 2rem; }
             .hero p { font-size: 1.1rem; }
             .section-title { font-size: 2rem; }
@@ -612,12 +701,17 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>🌙 রমজানের সময়সূচী</h1>
-            <p>সকল জেলার সেহরি-ইফতার সময়সূচী, কুরআন, দোয়া, তাসবিহ, কিবলা, যাকাত আরও অনেক কিছু।</p>
-            <div class="hero-buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.sbappstore.romjanbanglacalendar" class="btn-primary" aria-label="Download রমজানের সময়সূচী from Google Play">
-                    <img src="./assets/images/google-play-badge.png" alt="Download on Google Play">
-                </a>
+            <div class="hero-text">
+                <h1>🌙 রমজানের সময়সূচী</h1>
+                <p>সকল জেলার সেহরি-ইফতার সময়সূচী, কুরআন, দোয়া, তাসবিহ, কিবলা, যাকাত আরও অনেক কিছু।</p>
+                <div class="hero-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.sbappstore.romjanbanglacalendar" class="btn-primary" aria-label="Download রমজানের সময়সূচী from Google Play">
+                        <img src="./assets/images/google-play-badge.png" alt="Download on Google Play">
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="./assets/images/hero-feature.jpg" alt="রমজানের সময়সূচী App Features" onerror="this.src='./assets/images/screenshots/1.jpg'">
             </div>
         </div>
     </section>
@@ -649,11 +743,11 @@
                 <div class="screenshot-item"><img src="./assets/images/screenshots/1.jpg" alt="Home Screen"><div class="screenshot-label">Home Screen</div></div>
                 <div class="screenshot-item"><img src="./assets/images/screenshots/2.jpg" alt="Ramadan Timetable"><div class="screenshot-label">সেহরি-ইফতার সময়সূচী</div></div>
                 <div class="screenshot-item"><img src="./assets/images/screenshots/3.jpg" alt="Al Quran"><div class="screenshot-label">আল কুরআন</div></div>
-                <div class="screenshot-item"><img src="./assets/images/screenshots/4.jpg" alt="Tasbih Counter"><div class="screenshot-label">ডিজিটাল তাসবিহ</div></div>
-                <div class="screenshot-item"><img src="./assets/images/screenshots/5.jpg" alt="Qibla Compass"><div class="screenshot-label">কিবলা কম্পাস</div></div>
-                <div class="screenshot-item"><img src="./assets/images/screenshots/6.jpg" alt="Duas"><div class="screenshot-label">দোয়া সমূহ</div></div>
-                <div class="screenshot-item"><img src="./assets/images/screenshots/7.jpg" alt="Prayer Rules"><div class="screenshot-label">নামাজের নিয়ম</div></div>
-                <div class="screenshot-item"><img src="./assets/images/screenshots/8.jpg" alt="Settings"><div class="screenshot-label">Settings</div></div>
+                <div class="screenshot-item"><img src="./assets/images/screenshots/4.jpg" alt="Tasbih Counter"><div class="screenshot-label">কিবলা কম্পাস</div></div>
+                <div class="screenshot-item"><img src="./assets/images/screenshots/5.jpg" alt="Qibla Compass"><div class="screenshot-label">ডিজিটাল তাসবিহ</div></div>
+                <div class="screenshot-item"><img src="./assets/images/screenshots/6.jpg" alt="Duas"><div class="screenshot-label">নামাজের নিয়ম</div></div>
+                <div class="screenshot-item"><img src="./assets/images/screenshots/7.jpg" alt="Prayer Rules"><div class="screenshot-label">যাকাত ক্যালকুলেটর</div></div>
+                <div class="screenshot-item"><img src="./assets/images/screenshots/8.jpg" alt="Settings"><div class="screenshot-label">ইফতারের রেসেপি</div></div>
             </div>
         </div>
     </section>
